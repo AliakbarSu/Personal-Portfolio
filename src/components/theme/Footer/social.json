@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Github",
+    "link": "https://github.com/AliakbarSu",
+    "icon": "/icons/github.svg"
+  },
+  {
+    "id": 2,
+    "name": "StackOverflow",
+    "link": "https://stackoverflow.com",
+    "icon": "/icons/stackoverflow.svg"
+  },
+  {
+    "id": 3,
+    "name": "Twitter",
+    "link": "https://twitter.com",
+    "icon": "/icons/twitter.svg"
+  }
+]
