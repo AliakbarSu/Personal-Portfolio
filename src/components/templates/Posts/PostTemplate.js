@@ -1,12 +1,20 @@
 import React from 'react'
 import { Layout, SEO, Container } from 'components/common'
 import { Header } from 'components/theme'
-import { PostTitle } from './styles'
+import {
+  AuthorContainer,
+  AuthorAvatar,
+  AuthorName
+} from 'components/common/author'
+import { PostTitle, PostPublishedDate, PostContent } from './styles'
+import moment from 'moment'
 
 export default ({
   pageContext: {
     title,
-    content: { html }
+    createdAt,
+    content: { html },
+    author: { name, picture }
   }
 }) => (
   <Layout>
@@ -14,7 +22,14 @@ export default ({
     <Header />
     <Container>
       <PostTitle>{title}</PostTitle>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <AuthorContainer>
+        <AuthorAvatar src={picture.url} alt="Ali's profile photo" />
+        <AuthorName>{name},</AuthorName>
+        <PostPublishedDate>
+          {moment(createdAt).format('LLLL')}
+        </PostPublishedDate>
+      </AuthorContainer>
+      <PostContent dangerouslySetInnerHTML={{ __html: html }} />
     </Container>
   </Layout>
 )
