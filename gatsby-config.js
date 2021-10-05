@@ -28,6 +28,15 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'GraphCms',
+        fieldName: 'graphcms',
+        url:
+          'https://api-eu-central-1.graphcms.com/v2/ckqq0ighkcsda01xoc1j0dva5/master'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-nprogress',
       options: {
         color: config.themeColor,
