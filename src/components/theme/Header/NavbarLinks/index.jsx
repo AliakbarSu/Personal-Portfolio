@@ -3,6 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { ThemeContext } from 'providers/ThemeProvider'
 import ToggleTheme from 'components/theme/Header/ToggleTheme'
 import { Wrapper } from './styles'
+import { Link } from 'gatsby'
 
 const NavbarLinks = ({ desktop }) => {
   const { theme } = useContext(ThemeContext)
@@ -11,10 +12,10 @@ const NavbarLinks = ({ desktop }) => {
 
   return (
     <Wrapper desktop={desktop} theme={theme}>
-      <a href="/about">About</a>
+      <Link to="/about">About</Link>
       {/* {isHome && <AnchorLink href="#posts">Posts</AnchorLink>} */}
       {/* {!isHome && <a href="/#posts">Posts</a>} */}
-      <a href="/#posts">Posts</a>
+      <Link to="/#posts">Posts</Link>
       <ToggleTheme />
     </Wrapper>
   )
