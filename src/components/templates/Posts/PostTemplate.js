@@ -13,12 +13,14 @@ export default ({
   pageContext: {
     title,
     createdAt,
+    slug,
+    excerpt,
     content: { html },
     author: { name, picture }
   }
 }) => (
   <Layout>
-    <SEO />
+    <SEO title={title} description={excerpt} location={'/' + slug} />
     <Header />
     <Container>
       <PostTitle>{title}</PostTitle>

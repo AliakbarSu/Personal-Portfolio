@@ -27,6 +27,7 @@ exports.createPages = ({ graphql, actions }) => {
                   title
                   stage
                 }
+                excerpt
                 slug
                 stage
                 tags

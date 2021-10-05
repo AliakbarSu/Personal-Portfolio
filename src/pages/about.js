@@ -11,7 +11,11 @@ export default ({
   }
 }) => (
   <Layout>
-    <SEO />
+    <SEO
+      title="About - Ali Sultani"
+      description="This page contains a short description about ali sultani, how I am and what I do"
+      location="/about"
+    />
     <Intro />
     <Container>
       <p>{biography}</p>
