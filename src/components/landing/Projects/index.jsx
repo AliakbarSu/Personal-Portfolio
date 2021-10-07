@@ -4,7 +4,16 @@ import { ThemeContext } from 'providers/ThemeProvider'
 import { Container, Card, TitleWrap } from 'components/common'
 import Star from 'components/common/Icons/Star'
 import Fork from 'components/common/Icons/Fork'
-import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles'
+import {
+  Wrapper,
+  Grid,
+  Item,
+  Content,
+  Stats,
+  Languages,
+  SocialPreview,
+  SocialPreviewWrapper
+} from './styles'
 
 // export const Projects = () => <Wrapper>Test</Wrapper>;
 export const Projects = () => {
@@ -32,6 +41,7 @@ export const Projects = () => {
                       totalCount
                     }
                     forkCount
+                    openGraphImageUrl
                     languages(first: 3) {
                       nodes {
                         id
@@ -61,6 +71,9 @@ export const Projects = () => {
             theme={theme}
           >
             <Card theme={theme}>
+              <SocialPreviewWrapper>
+                <SocialPreview src={node.openGraphImageUrl} />
+              </SocialPreviewWrapper>
               <Content>
                 <h4>{node.name}</h4>
                 <p>{node.description}</p>
