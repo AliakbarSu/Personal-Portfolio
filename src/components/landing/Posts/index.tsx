@@ -15,12 +15,14 @@ import {
 } from './styles'
 import { Post } from '@/types/posts'
 import { dummyPosts } from '@/pages/posts/[id]'
+import { useRouter } from 'next/router'
 
 // export const Projects = () => <Wrapper>Test</Wrapper>;
 export const Posts = () => {
+  const router = useRouter()
   const { theme } = useContext(ThemeContext)
   function openPost(url: string) {
-    // navigate(url)
+    router.push(url)
   }
   // const {
   //   graphcms: { posts }
