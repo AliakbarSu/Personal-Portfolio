@@ -10,10 +10,15 @@ import React from 'react'
   } from '@components/common/author'
   import { PostTitle, PostPublishedDate, PostContent } from './styles'
   import moment from 'moment'
+import { useQuery } from "@apollo/client"
+import { GET_POST_SLUGS, GET_SINGLE_POST } from "./queries"
+import { client } from "../_app"
 
 export const dummyPosts = [{id: "post1", name: "post one", slug: "post-one", title: "first post", coverImage: {url: "https://blog.hootsuite.com/wp-content/uploads/2022/12/Facebook-Cover-Photos-13.png"}, excerpt: "jfsjf", url: "https://blog.hootsuite.com/wp-content/uploads/2022/12/Facebook-Cover-Photos-13.png"}]
 
 export async function getStaticPaths() {
+  
+  const { loading, error, data } = await client.query<{posts: Post[]}>({query: GET_POST_SLUGS});
     // When this is true (in preview environments) don't
     // prerender any static pages
     // (faster builds, but slower initial page load)
@@ -26,7 +31,7 @@ export async function getStaticPaths() {
   
     // Call an external API endpoint to get posts
     // const res = await fetch('https://.../posts')
-    const posts: Post[] = dummyPosts
+    const posts: Post[] = data?.posts || []
   
     // Get the paths we want to prerender based on posts
     // In production environments, prerender all pages
@@ -49,27 +54,28 @@ export async function getStaticPaths() {
       author: { name: string, picture: {url: string} }
   }
 
-  export async function getStaticProps(context: GetStaticPropsContext) {
-    console.log(context)
+  export async function getStaticProps(context: GetStaticPropsContext<{id: string}>) {
+    const { loading, error, data } = await client.query<{post: Post}>({query: GET_SINGLE_POST, variables: {slug: context?.params?.id}});
+    const {slug, excerpt, content, author } = data.post || {}
     return {
-      props: {title: "New post",
+      props: {
         createdAt: "12/12/2022",
-        slug: "new-post",
-        excerpt: "hello there",
-        content: { html: null },
-        author: { name: "jfskjf", picture: "jklsjfasf" }}
+        slug: slug,
+        excerpt: excerpt,
+        content: content,
+        author: author
+      }
     }
   }
 
   
   
   export default ({
-   
       title,
       createdAt,
       slug,
       excerpt,
-      // content: { html  },
+      content: { html  },
       author: { name, picture }
     }: PostPropTypes
   ) => (
@@ -85,8 +91,7 @@ export async function getStaticPaths() {
             {moment(createdAt).format('LLLL')}
           </PostPublishedDate>
         </AuthorContainer>
-        {/* <PostContent dangerouslySetInnerHTML={{ __html: html }} /> */}
+        <PostContent dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
   )
-  

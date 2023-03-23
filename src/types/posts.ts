@@ -7,4 +7,6 @@ export type Post = {
     slug: string;
     coverImage: {url: string};
     url: string;
+    content: {html: string},
+    author: {name: string; picture: string}
 }

@@ -16,9 +16,12 @@ import {
 import { Post } from '@/types/posts'
 import { dummyPosts } from '@/pages/posts/[id]'
 import { useRouter } from 'next/router'
+import { useQuery } from '@apollo/client'
+import { GET_POSTS } from './queries'
 
 // export const Projects = () => <Wrapper>Test</Wrapper>;
 export const Posts = () => {
+  const { loading, error, data } = useQuery<{posts: Post[]}>(GET_POSTS);
   const router = useRouter()
   const { theme } = useContext(ThemeContext)
   function openPost(url: string) {
@@ -43,7 +46,7 @@ export const Posts = () => {
   //     }
   //   `
   // )
-  const posts: Post[] = dummyPosts
+  const posts: Post[] = data?.posts || []
   return (
     <Wrapper as={Container} id="posts">
       <h2>Posts</h2>
