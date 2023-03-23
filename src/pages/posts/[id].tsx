@@ -8,10 +8,10 @@ import React from 'react'
     AuthorAvatar,
     AuthorName
   } from '@components/common/author'
-  import { PostTitle, PostPublishedDate, PostContent } from './styles'
+  import { PostTitle, PostPublishedDate, PostContent } from '../../styles/posts'
   import moment from 'moment'
 import { useQuery } from "@apollo/client"
-import { GET_POST_SLUGS, GET_SINGLE_POST } from "./queries"
+import { GET_POST_SLUGS, GET_SINGLE_POST } from "../../queries/posts"
 import { client } from "../_app"
 
 export const dummyPosts = [{id: "post1", name: "post one", slug: "post-one", title: "first post", coverImage: {url: "https://blog.hootsuite.com/wp-content/uploads/2022/12/Facebook-Cover-Photos-13.png"}, excerpt: "jfsjf", url: "https://blog.hootsuite.com/wp-content/uploads/2022/12/Facebook-Cover-Photos-13.png"}]

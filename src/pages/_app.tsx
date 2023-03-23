@@ -2,7 +2,7 @@ import ThemeProvider from '@/providers/ThemeProvider';
 import '@/styles/globals.css'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import type { AppProps } from 'next/app'
-import './fonts.css';
+import '../styles/fonts.css';
 
 export const client = new ApolloClient({
   uri: 'https://eu-central-1.cdn.hygraph.com/content/ckqq0ighkcsda01xoc1j0dva5/master',
