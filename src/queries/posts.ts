@@ -16,7 +16,7 @@ export const GET_SINGLE_POST = gql`
             slug,
             content {html},
             author {
-                name, picture { url}
+                name, picture {  url(transformation: {image: {resize: {height: 50, width: 50}}})}
             },
             excerpt,
             coverImage {
