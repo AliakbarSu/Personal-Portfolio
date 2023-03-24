@@ -1,8 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import config from '@/data/config';
+import Head from 'next/head';
 
-export const SEO = ({ title = config.defaultTitle, description = config.defaultDescription, location = '' }) => {
+export const SEO = ({ title = config.defaultTitle, description = config.defaultDescription, location = '', image = "/assets/thumbnail/thumbnail.png" }) => {
   const {url,
     defaultDescription,
     social,
@@ -46,17 +47,15 @@ export const SEO = ({ title = config.defaultTitle, description = config.defaultD
 			"${socialLinks.github}"
 		]
   	}`;
-
-  return (
-    <Helmet>
+    return <Head>
       <meta name="description" content={description} />
-      <meta name="image" content="/assets/thumbnail/thumbnail.png" />
+      <meta name="image" content={image} />
 
       <meta property="og:url" content={`${url}${location}/?ref=alisultani.com`} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="/assets/thumbnail/thumbnail.png" />
+      <meta property="og:image" content={image} />
       <meta property="fb:app_id" content={social.facebook} />
 
       <meta name="twitter:card" content="summary" />
@@ -69,7 +68,6 @@ export const SEO = ({ title = config.defaultTitle, description = config.defaultD
       <script type="application/ld+json">{structuredDataOrganization}</script>
       <link rel="publisher" href={socialLinks.google} />
       <title>{title}</title>
-      <html lang="en" dir="ltr" />
-    </Helmet>
-  );
+    </Head>
+  
 };
