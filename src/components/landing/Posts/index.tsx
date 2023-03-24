@@ -11,7 +11,8 @@ import {
   Content,
   Stats,
   Languages,
-  CoverImage
+  CoverImage,
+  Cropped
 } from './styles'
 import { Post } from '@/types/posts'
 import { dummyPosts } from '@/pages/posts/[id]'
@@ -27,25 +28,6 @@ export const Posts = () => {
   function openPost(url: string) {
     router.push(url)
   }
-  // const {
-  //   graphcms: { posts }
-  // } = useStaticQuery(
-  //   graphql`
-  //     {
-  //       graphcms {
-  //         posts {
-  //           id
-  //           slug
-  //           title
-  //           excerpt
-  //           coverImage {
-  //             url
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // )
   const posts: Post[] = data?.posts || []
   return (
     <Wrapper as={Container} id="posts">
@@ -61,7 +43,9 @@ export const Posts = () => {
             theme={theme}
           >
             <Card onClick={() => openPost('/posts/' + post.slug)} theme={theme}>
+              <Cropped>
               <CoverImage src={post.coverImage?.url}></CoverImage>
+              </Cropped>
               <Content>
                 <h4>{post.title}</h4>
                 <p>{post.excerpt}</p>

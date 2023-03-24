@@ -5,6 +5,7 @@ import { Author } from '@/types/author'
 import { client } from './_app'
 import { GET_AUTHOR } from '@/queries/about'
 import { GetStaticPropsContext } from 'next'
+import { TextContent } from '@/styles/about'
 
 
 const aliAuthorId = "ckqq0tvfsr6nx0b12mw5pj8en"
@@ -37,19 +38,9 @@ export default ({name, biography}: AboutProps) => {
     />
     <Intro />
     <Container>
-      <p>{biography}</p>
+      <TextContent dangerouslySetInnerHTML={{__html: biography}}/>
     </Container>
     {/* <Skills /> */}
     {/* <Contact /> */}
   </Layout>)
 }
-
-// export const pageQuery = graphql`
-//   query MyQuery {
-//     graphcms {
-//       author(where: { id: "ckqq0tvfsr6nx0b12mw5pj8en" }) {
-//         biography
-//       }
-//     }
-//   }
-// `

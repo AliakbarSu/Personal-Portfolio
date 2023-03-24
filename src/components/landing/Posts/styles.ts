@@ -78,3 +78,8 @@ export const Languages = styled.div`
 export const CoverImage = styled.img`
   width: 100%;
 `
+export const Cropped = styled.div`
+  width: 100%; 
+  height: 150px; 
+  overflow: hidden;
+`

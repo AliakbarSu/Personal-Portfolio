@@ -9,8 +9,6 @@ import React from 'react'
     AuthorName
   } from '@components/common/author'
   import { PostTitle, PostPublishedDate, PostContent } from '../../styles/posts'
-  import moment from 'moment'
-import { useQuery } from "@apollo/client"
 import { GET_POST_SLUGS, GET_SINGLE_POST } from "../../queries/posts"
 import { client } from "../_app"
 
@@ -80,7 +78,7 @@ export async function getStaticPaths() {
     }: PostPropTypes
   ) => {
     const date = new Date(publishedAt)
-    const formattedDate = new Intl.DateTimeFormat('en-CA').format(date)
+    const formattedDate = new Intl.DateTimeFormat('en-CA', { dateStyle: 'full'}).format(date)
     return <Layout>
       <SEO title={title} description={excerpt} location={'/' + slug} />
       <Header />
