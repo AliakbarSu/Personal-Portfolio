@@ -46,6 +46,7 @@ export async function getStaticPaths() {
   type PostPropTypes = {
     title: string;
     publishedAt: string;
+    createdAt: string;
       slug: string;
       excerpt: string;
       content: { html: string };
@@ -54,14 +55,15 @@ export async function getStaticPaths() {
 
   export async function getStaticProps(context: GetStaticPropsContext<{id: string}>) {
     const { loading, error, data } = await client.query<{post: Post}>({query: GET_SINGLE_POST, variables: {slug: context?.params?.id}});
-    const {slug, excerpt, content, author, publishedAt } = data.post || {}
+    const {slug, excerpt, content, author, publishedAt, createdAt } = data.post || {}
     return {
       props: {
         publishedAt,
         slug,
          excerpt,
         content,
-        author
+        author,
+        createdAt
       }
     }
   }
@@ -70,14 +72,14 @@ export async function getStaticPaths() {
   
   export default ({
       title,
-      publishedAt,
+      createdAt,
       slug,
       excerpt,
       content: { html  },
       author: { name, picture }
     }: PostPropTypes
   ) => {
-    const date = new Date(publishedAt)
+    const date = new Date(createdAt)
     const formattedDate = new Intl.DateTimeFormat('en-CA', { dateStyle: 'full'}).format(date)
     return <Layout>
       <SEO title={title} description={excerpt} location={'/' + slug} />

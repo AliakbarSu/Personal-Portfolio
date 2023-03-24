@@ -10,4 +10,5 @@ export type Post = {
     content: {html: string},
     author: {name: string; picture: string},
     publishedAt: string;
+    createdAt: string;
 }

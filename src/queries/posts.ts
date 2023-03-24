@@ -22,7 +22,8 @@ export const GET_SINGLE_POST = gql`
                 url
             },
             id,
-            publishedAt
+            publishedAt,
+            createdAt
         }
   }
 `;
