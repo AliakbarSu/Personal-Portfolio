@@ -47,7 +47,7 @@ export async function getStaticPaths() {
 
   type PostPropTypes = {
     title: string;
-      createdAt: string;
+    publishedAt: string;
       slug: string;
       excerpt: string;
       content: { html: string };
@@ -56,14 +56,14 @@ export async function getStaticPaths() {
 
   export async function getStaticProps(context: GetStaticPropsContext<{id: string}>) {
     const { loading, error, data } = await client.query<{post: Post}>({query: GET_SINGLE_POST, variables: {slug: context?.params?.id}});
-    const {slug, excerpt, content, author } = data.post || {}
+    const {slug, excerpt, content, author, publishedAt } = data.post || {}
     return {
       props: {
-        createdAt: "12/12/2022",
-        slug: slug,
-        excerpt: excerpt,
-        content: content,
-        author: author
+        publishedAt,
+        slug,
+         excerpt,
+        content,
+        author
       }
     }
   }
@@ -72,14 +72,16 @@ export async function getStaticPaths() {
   
   export default ({
       title,
-      createdAt,
+      publishedAt,
       slug,
       excerpt,
       content: { html  },
       author: { name, picture }
     }: PostPropTypes
-  ) => (
-    <Layout>
+  ) => {
+    const date = new Date(publishedAt)
+    const formattedDate = new Intl.DateTimeFormat('en-CA').format(date)
+    return <Layout>
       <SEO title={title} description={excerpt} location={'/' + slug} />
       <Header />
       <Container>
@@ -88,10 +90,10 @@ export async function getStaticPaths() {
           <AuthorAvatar src={picture.url} alt="Ali's profile photo" />
           <AuthorName>{name},</AuthorName>
           <PostPublishedDate>
-            {moment(createdAt).format('LLLL')}
+            {formattedDate}
           </PostPublishedDate>
         </AuthorContainer>
         <PostContent dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Layout>
-  )
+  }

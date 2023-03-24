@@ -11,7 +11,6 @@ export const GET_POST_SLUGS = gql`
 export const GET_SINGLE_POST = gql`
     query GetSinglePost($slug: String) {
         post(where: {slug: $slug}) {
-            createdAt,
             title,
             slug,
             content {html},
@@ -22,7 +21,8 @@ export const GET_SINGLE_POST = gql`
             coverImage {
                 url
             },
-            id
+            id,
+            publishedAt
         }
   }
 `;

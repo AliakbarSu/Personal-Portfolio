@@ -8,5 +8,6 @@ export type Post = {
     coverImage: {url: string};
     url: string;
     content: {html: string},
-    author: {name: string; picture: string}
+    author: {name: string; picture: string},
+    publishedAt: string;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import config from '@/data/config';
+import Head from 'next/head';
 
 export const SEO = ({ title = config.defaultTitle, description = config.defaultDescription, location = '' }) => {
   const {url,
@@ -48,7 +49,7 @@ export const SEO = ({ title = config.defaultTitle, description = config.defaultD
   	}`;
 
   return (
-    <Helmet>
+    <Head>
       <meta name="description" content={description} />
       <meta name="image" content="/assets/thumbnail/thumbnail.png" />
 
@@ -65,10 +66,11 @@ export const SEO = ({ title = config.defaultTitle, description = config.defaultD
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image:src" content="/assets/thumbnail/thumbnail.png" />
+      <link rel="icon" href="/assets/favicon/android-chrome-512x512.png" />
       <script type="application/ld+json">{structuredDataOrganization}</script>
       <link rel="publisher" href={socialLinks.google} />
       <title>{title}</title>
       <html lang="en" dir="ltr" />
-    </Helmet>
+    </Head>
   );
 };
