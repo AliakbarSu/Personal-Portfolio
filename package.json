@@ -15,8 +15,7 @@
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest",
-    "pnpm": "pnpm@8.0.0"
+    "turbo": "latest"
   },
   "engines": {
     "node": "v16.19.0"
