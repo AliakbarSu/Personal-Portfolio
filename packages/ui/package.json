@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "styled-components": "^5.3.9",
-    "next": "^13.1.1",
+    "next": "13.2.4",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-helmet": "^6.1.0",
     "yup": "^1.0.2",
