@@ -5,10 +5,10 @@ const nextConfig = {
   transpilePackages: ["ui"],
   output: 'standalone',
   experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../../'),
-    outputFileTracingIncludes: {
-      '*': ['./node_modules/next/**/*'],
-    }
+    // outputFileTracingRoot: path.join(__dirname, '../../packages/**/*'),
+    // outputFileTracingIncludes: {
+    //   '*': ['./apps/blog/node_modules/next'],
+    // },
   },
   typescript: {
     ignoreBuildErrors: true
