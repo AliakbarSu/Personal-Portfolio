@@ -18,9 +18,6 @@
     "turbo": "latest",
     "pnpm": "latest"
   },
-  "engines": {
-    "node": "v16.19.0"
-  },
   "dependencies": {},
   "packageManager": "yarn@1.22.19"
 }
