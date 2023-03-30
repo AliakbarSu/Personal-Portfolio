@@ -8,16 +8,17 @@
     "lint": "eslint *.ts*"
   },
   "dependencies": {
-    "styled-components": "^5.3.9",
     "next": "13.2.4",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-helmet": "^6.1.0",
-    "yup": "^1.0.2",
     "react": "^18.2.0",
-    "react-google-recaptcha": "^2.1.0"
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-google-recaptcha": "^2.1.0",
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.9",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-dom": "^18.0.6",
     "eslint": "^7.32.0",
     "eslint-config-custom": "^1.0.0",
