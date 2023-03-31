@@ -16,7 +16,7 @@ const NavbarLinks = ({ desktop }: {desktop: boolean}) => {
     <Wrapper desktop={desktop} theme={theme}>
       <Link href="/about">About</Link>
       <Link href="/#posts">Posts</Link>
-      <Link href="blog.alisultani.com">Blog</Link>
+      <Link href="https://blog.alisultani.com">Blog</Link>
       <ToggleTheme />
     </Wrapper>
   )
