@@ -16,9 +16,9 @@ export const Intro = () => {
           <h1>Hi There!</h1>
           <h4>I’m Ali and this is my personal blog!</h4>
         </Details>
-        {/* <Thumbnail>
-          <img src="/assets/illustrations/dev-background.png" alt="photo of ali" />
-        </Thumbnail> */}
+        <Thumbnail>
+          <img src="/assets/illustrations/dev.svg" alt="photo of ali" />
+        </Thumbnail>
       </IntroWrapper>
     </Wrapper>
   )
