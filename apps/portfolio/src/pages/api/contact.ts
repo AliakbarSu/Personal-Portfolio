@@ -1,18 +1,19 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { sendEmail } from 'utils';
+import { sendEmail } from 'utils'
 
-type Data = {
-  name: string
-}
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  const name = req.body.name;
-  const email = req.body.email;
-  const message = req.body.message;
-  const application = "Portfolio";
-  return sendEmail(name, email, message, application)
+  if (req.method === 'POST') {
+    const name = req.body.name
+    const email = req.body.email
+    const message = req.body.message
+    const application = 'Portfolio'
+    await sendEmail(name, email, message, application)
+    return res.json({ message: 'Email sent' })
+  } else {
+    return res.status(500).json({ error: 'Method not allowed' })
+  }
 }

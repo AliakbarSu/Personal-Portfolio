@@ -6,7 +6,7 @@ const SENDER_IDENTITY = 'hello@alisultani.com'
 export const sendEmail = async (
   name: string,
   from: string,
-  messsage: string,
+  message: string,
   application: 'Bog' | 'Portfolio'
 ) => {
   return new Promise((resolve, reject) => {
@@ -14,8 +14,9 @@ export const sendEmail = async (
       .send({
         from: SENDER_IDENTITY,
         to: TO_EMAIL,
-        subject: `Contact Form: (${name})}) - ${application}`,
-        text: `A new email from: ${from} - ${messsage}`
+        subject: `Email From: ${name} - ${application}`,
+        text: `A new email from: ${from} - ${message}`,
+        html: `<p>A new email from: ${from} - ${message}</p><p>${message}</p>`
       })
       .then(resolve)
       .catch(reject)
