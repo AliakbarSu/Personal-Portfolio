@@ -14,9 +14,10 @@ export const sendEmail = async (
       .send({
         from: SENDER_IDENTITY,
         to: TO_EMAIL,
-        subject: `Email From: ${name} - ${application}`,
+        subject: `${application} - Email From: ${name}`,
         text: `A new email from: ${from} - ${message}`,
-        html: `<p>A new email from: ${from} - ${message}</p><p>${message}</p>`
+        html: `<p>A new email from: ${from} - ${message}</p><p>${message}</p>`,
+        replyTo: from
       })
       .then(resolve)
       .catch(reject)
