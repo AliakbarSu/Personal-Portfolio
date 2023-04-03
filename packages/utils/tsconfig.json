@@ -1,0 +1,10 @@
+{
+    "extends": "tsconfig/utils.json",
+    "include": ["."],
+    "exclude": ["dist", "build", "node_modules"],
+    "compilerOptions": {
+      "baseUrl": ".",
+      "resolveJsonModule": true
+    }
+  }
+  

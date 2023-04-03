@@ -1,0 +1,8 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Utils",
+    "extends": "./base.json",
+    "include": ["next-env.d.ts"],
+    "exclude": ["node_modules"]
+  }
+  
