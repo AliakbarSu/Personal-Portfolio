@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import { Button, Input } from '@/components/common';
 import { Error, Center, InputField } from './styles';
 
+
+
 export default () => (
   <Formik
     initialValues={{
@@ -27,7 +29,7 @@ export default () => (
       try {
         await axios({
           method: 'POST',
-          url: `${process.env.GATSBY_PORTFOLIO_FORMIK_ENDPOINT}`,
+          url: "api/contact",
           headers: {
             'Content-Type': 'application/json',
           },
@@ -47,8 +49,8 @@ export default () => (
       }
     }}
   >
-    {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-      <Form>
+    {({ values, touched, errors, setFieldValue, isSubmitting }) => {
+     return  <Form>
         <InputField>
           <Input
             as={FastField}
@@ -92,7 +94,7 @@ export default () => (
           <InputField>
             <FastField
               component={Recaptcha}
-              sitekey={process.env.GATSBY_PORTFOLIO_RECAPTCHA_KEY}
+              sitekey={process.env.NEXT_PUBLIC_PORTFOLIO_RECAPTCHA_KEY}
               name="recaptcha"
               onChange={(value: string) => setFieldValue('recaptcha', value)}
             />
@@ -113,6 +115,7 @@ export default () => (
           </Button>
         </Center>
       </Form>
-    )}
+    }
+    }
   </Formik>
 );
