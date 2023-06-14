@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Facebook",
+    "link": "https://www.facebook.com/aliakbar.sultani.71",
+    "icon": "/assets/social_icons/facebook.svg"
+  },
+  {
+    "id": 3,
+    "name": "Twitter",
+    "link": "https://twitter.com/Aliakba03807571",
+    "icon": "/assets/social_icons/twitter.svg"
+  }
+]
