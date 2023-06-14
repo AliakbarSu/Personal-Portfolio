@@ -1,38 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio
+
+![Portfolio](/screenshots/homepage.png?raw=true)
+
+[Live Demo](https://alisultani.com/)
+
+## Description
+
+I'm Ali Sultani, a passionate and dedicated software developer with a strong background in web development. I have experience working with a variety of technologies, including HTML, CSS, JavaScript, and frameworks like React and Node.js. I am constantly learning and exploring new technologies to stay up-to-date with the latest trends in the industry.
+
+## Features
+
+- Blog
+- Contact Form
+- Dark/light Mode
+
+## Technologies Used
+
+- React/NextJs
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Next.js (version 13.x.x)
+- Yarn (or you could use npm)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   ```shell
+      git clone https://github.com/AliakbarSu/Personal-Portfolio.git
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Install the dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```shell
+       cd Personal-Portfolio
+       yarn install
+   ```
 
-## Learn More
+### Development
 
-To learn more about Next.js, take a look at the following resources:
+1. Start the development:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```shell
+    npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Open your browser and navigate to `http://localhost:3000` to see the application running.
 
-## Deploy on Vercel
+### Note
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. This project is a Monorepo, meaning it contains two projects. All the applications are inside the `apps` folder.
