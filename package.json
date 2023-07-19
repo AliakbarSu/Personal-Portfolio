@@ -14,9 +14,9 @@
   },
   "devDependencies": {
     "eslint-config-custom": "^1.0.0",
+    "pnpm": "latest",
     "prettier": "latest",
-    "turbo": "latest",
-    "pnpm": "latest"
+    "turbo": "^1.8.8"
   },
   "dependencies": {},
   "packageManager": "yarn@1.22.19"
