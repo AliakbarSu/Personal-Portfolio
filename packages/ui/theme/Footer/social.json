@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "Facebook",
-    "link": "https://www.facebook.com/aliakbar.sultani.71",
-    "icon": "/assets/social_icons/facebook.svg"
+    "name": "LinkedIn",
+    "link": "https://www.linkedin.com/in/allie-sul/",
+    "icon": "/assets/social_icons/linkedin.svg"
   },
   {
-    "id": 3,
-    "name": "Twitter",
-    "link": "https://twitter.com/Aliakba03807571",
-    "icon": "/assets/social_icons/twitter.svg"
+    "id": 2,
+    "name": "GitHub",
+    "link": "https://github.com/AliakbarSu",
+    "icon": "/assets/social_icons/github.svg"
   }
 ]
