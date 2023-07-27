@@ -6,7 +6,7 @@ import { Wrapper } from './styles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const NavbarLinks = ({ desktop }: {desktop: boolean}) => {
+const NavbarLinks = ({ desktop }: { desktop: boolean }) => {
   const { theme } = useContext(ThemeContext)
   const router = useRouter()
 
@@ -15,7 +15,7 @@ const NavbarLinks = ({ desktop }: {desktop: boolean}) => {
   return (
     <Wrapper desktop={desktop} theme={theme}>
       <Link href="/about">About</Link>
-      <Link href="/#posts">Posts</Link>
+      <Link href="/#projects">Projects</Link>
       <Link href="https://blog.alisultani.com">Blog</Link>
       <ToggleTheme />
     </Wrapper>
