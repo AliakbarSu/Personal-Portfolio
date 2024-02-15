@@ -16,3 +16,15 @@ export interface Project {
     }
             
 }
+
+export interface WorkProject {
+    id: string;
+    title: string;
+    description: string;
+    technologies: string;
+    screenshots: {
+        id: string;
+        url: string;
+        width: number;
+    }[]
+}

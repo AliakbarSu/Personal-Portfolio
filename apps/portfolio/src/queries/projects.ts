@@ -31,3 +31,20 @@ export const GET_PROJECTS = gql`
     }
   }
 `
+
+
+export const GET_WORK_PROJECTS = gql`
+    query GetProjects {
+        projects {
+        id
+        title
+        technologies
+        description
+        screenshots {
+          id
+          url
+          width
+        }
+      }
+    }
+`;

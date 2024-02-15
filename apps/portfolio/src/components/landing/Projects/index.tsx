@@ -22,7 +22,7 @@ export const Projects = ({ projects }: { projects: Project[] }) => {
 
   return (
     <Wrapper as={Container} id="projects">
-      <h2>Projects</h2>
+      <h2>Personal Projects</h2>
       <Grid>
         {projects.map(node => (
           <Item
