@@ -18,6 +18,12 @@ export const Footer = () => (
             Ali
           </a>
         </span>
+        <div>
+          <span>Check out </span>
+          <a href="https://au.clinicalvitals.online" rel="noopener noreferrer" target="_blank">
+            ClinicalVitals
+          </a>
+        </div>
       </Details>
       <Links>
         {social.map(({ id, name, link, icon }) => (
