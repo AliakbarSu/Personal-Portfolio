@@ -24,8 +24,8 @@ export default  {
     zipCode: 'ZipCode',
   },
   contact: {
-    email: 'aliakbar.su@gmail.com',
+    email: 'hello@alisultani.com',
     phone: 'phone number',
   },
-  foundingDate: '2021',
+  foundingDate: '2020',
 };
