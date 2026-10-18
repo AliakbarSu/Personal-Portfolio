@@ -2,13 +2,14 @@
 const path = require('path')
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["ui"],
+  transpilePackages: ["ui", "utils"],
   output: 'standalone',
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../..'),
-    outputFileTracingIncludes: {
-      '*': ['node_modules/next'],
-    },
+  outputFileTracingRoot: path.join(__dirname, '../..'),
+  outputFileTracingIncludes: {
+    '*': ['node_modules/next'],
+  },
+  compiler: {
+    styledComponents: true,
   },
   typescript: {
     ignoreBuildErrors: true

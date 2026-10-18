@@ -1,6 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "globalEnv": [
+    "GATSBY_PORTFOLIO_FORMIK_ENDPOINT",
+    "GATSBY_PORTFOLIO_RECAPTCHA_KEY",
+    "NEXT_PUBLIC_PORTFOLIO_RECAPTCHA_KEY",
+    "PORTFOLIO_GITHUB_TOKEN",
+    "SENDGRID_API_KEY"
+  ],
+  "tasks": {
     "build": {
       "dependsOn": ["^build"]
     },
