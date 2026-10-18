@@ -17,7 +17,7 @@ import {
 import { Post } from '@/types/posts'
 import { dummyPosts } from '@/pages/posts/[id]'
 import { useRouter } from 'next/router'
-import { useQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client/react'
 import { GET_POSTS } from './queries'
 
 // export const Projects = () => <Wrapper>Test</Wrapper>;

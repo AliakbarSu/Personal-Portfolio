@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from '../../../providers/ThemeProvider';
 import { Container } from '../../../common/index';
 import NavbarLinks from '../NavbarLinks';
@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <Wrapper as={Container}>
-      <Brand as={Link as unknown as ReactElement} href="/" theme={theme}>
+      <Brand as={Link} href="/" theme={theme}>
         Ali Sultani
       </Brand>
       <NavbarLinks desktop />

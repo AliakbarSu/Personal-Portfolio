@@ -1,11 +1,12 @@
 import ThemeProvider from 'ui/providers/ThemeProvider';
 import '@/styles/globals.css'
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
 import type { AppProps } from 'next/app'
 import '../styles/fonts.css';
 
 export const client = new ApolloClient({
-  uri: 'https://eu-central-1.cdn.hygraph.com/content/ckqq0ighkcsda01xoc1j0dva5/master',
+  link: new HttpLink({ uri: 'https://eu-central-1.cdn.hygraph.com/content/ckqq0ighkcsda01xoc1j0dva5/master' }),
   cache: new InMemoryCache(),
 });
 

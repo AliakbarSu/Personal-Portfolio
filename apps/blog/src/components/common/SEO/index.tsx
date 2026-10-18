@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import config from '@/data/config';
 import Head from 'next/head';
 

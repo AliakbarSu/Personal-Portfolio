@@ -18,8 +18,8 @@ type AboutProps = {
 }
 
 export async function getStaticProps(context: GetStaticPropsContext) {
-  const { loading, error, data } = await client.query<{author: Author}>({query: GET_AUTHOR, variables: {id: aliAuthorId}});
-  const {name, biography} = data.author || {}
+  const { data } = await client.query<{author: Author}>({query: GET_AUTHOR, variables: {id: aliAuthorId}});
+  const {name, biography} = data?.author || {}
   return {
     props: {
       name,

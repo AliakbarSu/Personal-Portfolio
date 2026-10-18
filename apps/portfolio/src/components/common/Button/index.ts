@@ -1,6 +1,4 @@
-import { ReactElement } from 'react';
-import styled, { StyledComponentProps, ThemeProps } from 'styled-components';
-import { JsxElement } from 'typescript';
+import styled from 'styled-components';
 
 export const Button = styled.button`
   cursor: pointer;
@@ -25,7 +23,7 @@ export const Button = styled.button`
     background: gray;
   }
 
-  ${({ theme: {secondary} }: ThemeProps<{secondary: boolean}>) =>
+  ${({ theme: { secondary } }: { theme: { secondary?: boolean } }) =>
     secondary &&
     `
 		background: #001F3F;

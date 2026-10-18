@@ -41,7 +41,7 @@ export const WorkProjects = ({ projects }: { projects: WorkProject[] }) => {
                                 <Stats theme={theme}>
                                 </Stats>
                                 <Stats theme={theme}>
-                                    <Languages style={{"flex-wrap": "wrap"}}>
+                                    <Languages style={{ flexWrap: "wrap" }}>
                                         {node.technologies.split(",").map((name) => (
                                             <span key={name}>{name.trim()}</span>
                                         ))}

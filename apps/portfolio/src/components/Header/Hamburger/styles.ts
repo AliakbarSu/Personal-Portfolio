@@ -1,7 +1,7 @@
 import { Themes } from '@/providers/ThemeProvider';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ $sidebar: boolean }>`
   z-index: 5;
   top: 1.6rem;
   right: 1.8rem;
@@ -14,8 +14,8 @@ export const Wrapper = styled.div`
     display: block;
   }
 
-  ${({ sidebar }: {sidebar: boolean}) =>
-    sidebar &&
+  ${({ $sidebar }) =>
+    $sidebar &&
     `
 			right: 18%;
 			top: 1.4rem;
@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
 	`}
 `;
 
-export const Bar = styled.div`
+export const Bar = styled.div<{ $top?: boolean; $mid?: boolean; $bottom?: boolean; $sidebar: boolean }>`
 	width: 1.6rem;
 	height: .15rem;
 	margin-bottom: .3rem;
@@ -45,25 +45,25 @@ export const Bar = styled.div`
 		width: 1.6rem;
 	}
 
-	${({ top, sidebar, theme }: {top: boolean; sidebar: boolean; theme: Themes}) =>
-    top &&
-    sidebar &&
+	${({ $top, $sidebar, theme }) =>
+    $top &&
+    $sidebar &&
 		`
 		background-color: ${(theme === 'light' ? '#212121' : '#fff')};
 		transform: translateY(8px) rotate(-135deg);
 		
 	`}
 
-	${({ mid, sidebar }: {mid: boolean; sidebar: boolean}) =>
-    mid &&
-    sidebar &&
+	${({ $mid, $sidebar }) =>
+    $mid &&
+    $sidebar &&
 		`
 		transform: scale(0);
 		`}
 
-	${({ bottom, sidebar, theme }: {bottom: boolean; sidebar: boolean; theme: Themes}) =>
-    bottom &&
-    sidebar &&
+	${({ $bottom, $sidebar, theme }) =>
+    $bottom &&
+    $sidebar &&
 		`
 			background-color: ${(theme === 'light' ? '#212121' : '#fff')};
 			transform: translateY(-6px) rotate(-45deg);

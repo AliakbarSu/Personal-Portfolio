@@ -21,10 +21,10 @@ type ProjectsQueryType = {
 }
 export async function getStaticProps(context: GetStaticPropsContext) {
   const { data: projects } = await client.query<{projects: WorkProject[]}>({query: GET_WORK_PROJECTS});
-  const work_projects = projects.projects || []
+  const work_projects = projects?.projects || []
 
   const {  data } = await gitHubClient.query<{viewer: ProjectsQueryType}>({query: GET_PROJECTS})
-  const {pinnedItems: {edges}} = data.viewer || {}
+  const {pinnedItems: {edges}} = data?.viewer || {}
   return {
     props: {
       github_projects: edges.map(({node}) => node),

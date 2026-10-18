@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ $desktop?: boolean }>`
   a {
     color: #000;
     text-decoration: none;
@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
 		}
   }
 
-  ${({ desktop }: {desktop: boolean}) =>
-    desktop
+  ${({ $desktop }) =>
+    $desktop
       ? `
 			align-items: center;
 			display: flex;

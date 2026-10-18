@@ -59,7 +59,7 @@ export default () => (
             component="input"
             aria-label="name"
             placeholder="Full name*"
-            error={touched.name && errors.name}
+            $error={!!(touched.name && errors.name)}
           />
           <ErrorMessage component={Error} name="name" />
         </InputField>
@@ -72,7 +72,7 @@ export default () => (
             type="email"
             name="email"
             placeholder="Email*"
-            error={touched.email && errors.email}
+            $error={!!(touched.email && errors.email)}
           />
           <ErrorMessage component={Error} name="email" />
         </InputField>
@@ -86,7 +86,7 @@ export default () => (
             type="text"
             name="message"
             placeholder="Message*"
-            error={touched.message && errors.message}
+            $error={!!(touched.message && errors.message)}
           />
           <ErrorMessage component={Error} name="message" />
         </InputField>

@@ -1,16 +1,17 @@
 import ThemeProvider from 'ui/providers/ThemeProvider';
 import '@/styles/globals.css'
-import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
 import type { AppProps } from 'next/app'
 import '../styles/fonts.css';
-import { setContext } from '@apollo/client/link/context';
+import { SetContextLink } from '@apollo/client/link/context';
 
-const httpLink = createHttpLink({
+const httpLink = new HttpLink({
   uri: 'https://api.github.com/graphql',
 });
 
 
-const authLink = setContext((_, { headers }) => {
+const authLink = new SetContextLink(({ headers }) => {
   const token = process.env.PORTFOLIO_GITHUB_TOKEN;
   return {
     headers: {
@@ -26,7 +27,7 @@ export const gitHubClient = new ApolloClient({
 });
 
 export const client = new ApolloClient({
-  uri: "https://eu-central-1.cdn.hygraph.com/content/ckqq0ighkcsda01xoc1j0dva5/master",
+  link: new HttpLink({ uri: "https://eu-central-1.cdn.hygraph.com/content/ckqq0ighkcsda01xoc1j0dva5/master" }),
   cache: new InMemoryCache(),
 });
 

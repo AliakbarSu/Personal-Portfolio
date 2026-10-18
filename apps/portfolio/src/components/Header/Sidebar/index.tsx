@@ -7,7 +7,7 @@ const Sidebar = ({ sidebar, toggle }: {sidebar: boolean; toggle: (value: boolean
   const { theme } = useContext(ThemeContext);
   
   return (
-  <Wrapper active={sidebar} onClick={toggle} theme={theme}>
+  <Wrapper $active={sidebar} onClick={toggle} theme={theme}>
     <NavbarLinks />
   </Wrapper>
   )

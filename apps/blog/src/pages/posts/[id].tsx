@@ -18,8 +18,8 @@ export const dummyPosts = [{id: "post1", name: "post one", slug: "post-one", tit
 
 export async function getStaticPaths() {
   
-  const { loading, error, data } = await client.query<{posts: Post[]}>({query: GET_POST_SLUGS});
-  if(data.posts) {
+  const { data } = await client.query<{posts: Post[]}>({query: GET_POST_SLUGS});
+  if(data?.posts) {
     const posts: Post[] = data?.posts || []
     const paths: GetStaticPaths = posts.map((post: Post) => ({
       params: { id: post.slug }
@@ -43,8 +43,8 @@ export async function getStaticPaths() {
   }
 
   export async function getStaticProps(context: GetStaticPropsContext<{id: string}>) {
-    const { loading, error, data } = await client.query<{post: Post}>({query: GET_SINGLE_POST, variables: {slug: context?.params?.id}});
-    if(data.post) {
+    const { data } = await client.query<{post: Post}>({query: GET_SINGLE_POST, variables: {slug: context?.params?.id}});
+    if(data?.post) {
       const {slug, excerpt, content, author, publishedAt, createdAt, coverImage } = data.post || {}
       return {
         props: {
